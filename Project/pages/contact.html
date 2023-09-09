@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Anime List</title>
+
+		<!--Set the Website Icon-->
+		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+		<!--Font Awesome-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+
+		<!--Import JQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+		<!--JS Helpers-->
+		<script src="/js/helpers/notifier.js" defer></script>
+
+		<!--JS Main-->
+		<script src="/js/contact.js" defer></script>
+	</head>
+	<body class="contact_page">
+		<!--Setup the Navbar-->
+		<nav class="navbar">
+			<!--Setup the Navigation Logo-->
+			<div class="nav_logo">
+				<img src="/assets/Banner.png" alt="" />
+			</div>
+
+			<!--Setup the Navigation Links Area-->
+			<div class="nav_links">
+				<a class="nav_btn" href="/">Home</a>
+				<a class="nav_btn nav_btn_active" href="#">Contact</a>
+				<a class="nav_btn" href="/pages/about.html">About</a>
+				<a class="nav_btn" href="/pages/rate.html">Rate</a>
+			</div>
+		</nav>
+
+		<!--Setup the Contact Content Section-->
+		<div class="contact_content">
+			<!--Setup the Heading-->
+			<div class="heading">
+				<p>Contact Us:</p>
+			</div>
+
+			<!--Setup the Contact Form Section-->
+			<div class="contact_form">
+				<!--Setup the Form-->
+				<form>
+					<!--Setup the Message input Area-->
+					<div class="form_input">
+						<label>Subject:</label>
+
+						<!--Setup a the Message Input -->
+						<input id="message" autocomplete="off" />
+					</div>
+
+					<!--Setup the Priority input Area-->
+					<div class="form_input">
+						<label>Priority:</label>
+
+						<!--Setup a Radio Button Group-->
+						<div class="form_radio_group">
+							<!--Setup the Radio Buttons for the User to choose from-->
+							<input type="radio" name="Priority" value="good" checked />
+							<input type="radio" name="Priority" value="average" />
+							<input type="radio" name="Priority" value="bad" />
+						</div>
+					</div>
+
+					<!--Setup the Message input Area-->
+					<div class="form_input">
+						<label>Message:</label>
+
+						<!--Setup a the Message Input -->
+						<input id="message" autocomplete="off" />
+					</div>
+				</form>
+			</div>
+			<!--Setup the Send Message Button-->
+			<button class="send_message_button">Send Message</button>
+		</div>
+
+		<!--Setup The Notifier-->
+		<div class="notifier">
+			<h1 class="notifier_title">Success</h1>
+			<p class="notifier_description">Added new Anime to your list (21 total)</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+.contact_page {
+	.contact_content {
+		display: flex;
+		flex-direction: column;
+		justify-content: baseline;
+		align-items: center;
+
+		.heading {
+			font-size: 32px;
+			color: #ff4a4a;
+			font-weight: bold;
+			font-family: Verdana;
+			text-decoration: underline;
+		}
+
+		.contact_form {
+			width: 50%;
+
+			form {
+				.form_input {
+					text-align: center;
+					flex-direction: column;
+					margin-bottom: 40px;
+
+					label {
+						color: #ff4a4a;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+		.send_message_button {
+			background-color: #00000000;
+			color: #23dd5b;
+			outline: none;
+			border: 1px solid #23dd5b;
+			border-radius: 3px;
+			padding: 3px;
+			text-shadow: #000000 -2px 2px;
+			font-size: 16px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.send_message_button:hover {
+			color: #21b853;
+		}
+	}
+}
