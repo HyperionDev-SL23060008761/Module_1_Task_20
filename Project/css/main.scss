@@ -8,7 +8,11 @@
 @import "components/card_list";
 @import "components/modal";
 @import "components/form";
+@import "components/comment_list";
+@import "components/comment";
 @import "components/notifier";
+
+//Pages
 @import "pages/about_page";
 @import "pages/rate_page";
 @import "pages/contact_page";
@@ -18,10 +22,29 @@ body {
 	display: flex;
 	flex-direction: column;
 	width: 100vw;
-	height: 100vh;
-
 	background-color: $background-primary;
 	color: $text-primary;
 	font-family: $font-primary;
 	margin: 0;
+	overflow-x: hidden;
+}
+
+//Scrollbar Width
+body::-webkit-scrollbar {
+	width: 1px;
+}
+
+//Scrollbar Track
+body::-webkit-scrollbar-track {
+	background: #f1f1f100;
+}
+
+//Scrollbar Handle
+body::-webkit-scrollbar-thumb {
+	background: $text-accent;
+}
+
+//Scrollbar Hover
+body::-webkit-scrollbar-thumb:hover {
+	background: $button_secondary;
 }

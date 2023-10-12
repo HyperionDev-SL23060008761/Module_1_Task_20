@@ -21,29 +21,29 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 		<!--JS Helpers-->
-		<script src="js/helpers/notifier.js" defer></script>
-		<script src="js/helpers/anime.js" defer></script>
-		<script src="js/helpers/modal.js" defer></script>
-		<script src="js/helpers/show_data.js" defer></script>
-		<script src="js/helpers/initial_setup.js" defer></script>
+		<script src="./js/helpers/notifier.js" defer></script>
+		<script src="./js/helpers/anime.js" defer></script>
+		<script src="./js/helpers/modal.js" defer></script>
+		<script src="./js/helpers/show_data.js" defer></script>
+		<script src="./js/helpers/initial_setup.js" defer></script>
 
 		<!--JS Main-->
-		<script src="js/main.js" defer></script>
+		<script src="./js/main.js" defer></script>
 	</head>
 	<body>
 		<!--Setup the Navbar-->
 		<nav class="navbar">
 			<!--Setup the Navigation Logo-->
 			<div class="nav_logo">
-				<img src="assets/Banner.png" alt="" />
+				<img src="./assets/Banner.png" alt="" />
 			</div>
 
 			<!--Setup the Navigation Links Area-->
 			<div class="nav_links">
 				<a class="nav_btn nav_btn_active" href="#">Home</a>
-				<a class="nav_btn" href="/pages/contact.html">Contact</a>
-				<a class="nav_btn" href="pages/about.html">About</a>
-				<a class="nav_btn" href="/pages/rate.html">Rate</a>
+				<a class="nav_btn" href="./pages/contact.html">Contact</a>
+				<a class="nav_btn" href="./pages/about.html">About</a>
+				<a class="nav_btn" href="./pages/rate.html">Rate</a>
 			</div>
 		</nav>
 
@@ -54,6 +54,11 @@
 				<!--Setup the Card Icon-->
 				<i class="fa-solid fa-plus"></i>
 			</div>
+		</div>
+
+		<!--Setup the Comment List-->
+		<div class="comment_list">
+			<p class="comment_list_title">Comments</p>
 		</div>
 
 		<!--Setup The Notifier-->
@@ -190,4 +195,12 @@
 		<p class="show_name"></p>
 		<span class="spacer"></span>
 	</li>
+</template>
+
+<!--Setup the Comment Template-->
+<template class="template_comment">
+	<div class="comment">
+		<p class="anime_name">Anime Name</p>
+		<p class="comment_content">Comment</p>
+	</div>
 </template>

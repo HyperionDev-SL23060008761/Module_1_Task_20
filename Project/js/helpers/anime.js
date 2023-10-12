@@ -97,28 +97,56 @@ class Anime {
 	}
 
 	/**
-	 * Opens the Card on the Document
-	 * @param {Node} parentElement The Element where the Card will be Opened in
+	 * Delete's all of the Nodes that are currently on the Page
+	 * @param {Node} cardParentElement The Element where the card is opened in
+	 * @param {Node} commentParentElement The Element where the Comment is opened in
 	 * @returns {void}
 	 */
-	openCard(parentElement) {
+	deleteNodes(cardParentElement, commentParentElement) {
+		//
+		//Get the Card Element
+		const cardElement = cardParentElement.querySelector(`[data-id="${this.id}"]`);
+
+		//Get the Card Element
+		const commentElement = commentParentElement.querySelector(`[data-id="${this.id}"]`);
+
+		//Check if the Card Node Exists and Remove it
+		if (cardElement) cardElement.remove();
+
+		//Check if the Comment Node Exists and Remove it
+		if (commentElement) commentElement.remove();
+	}
+
+	/**
+	 * Opens the Card on the Document
+	 * @param {Node} cardParentElement The Element where the Card will be Opened in
+	 * @param {Node} commentParentElement The Element where the Comment will be Opened in
+	 * @returns {void}
+	 */
+	openCard(cardParentElement, commentParentElement) {
 		//
 		//Check if the Parent Element is Invalid
-		if (!parentElement) return;
+		if (!cardParentElement) return;
 
-		//Get the Current Card's Data
-		const cardNodeData = this.nodeData();
+		//Get the Node List
+		const nodeList = this.nodeData();
 
-		//Add the Card to the Parent Element
-		return parentElement.append(cardNodeData);
+		//Add the Card to the Card's Parent Element
+		cardParentElement.append(nodeList.card);
+
+		//Add the Comment to the Comment's Parent Element
+		commentParentElement.append(nodeList.comment);
 	}
 
 	/**
 	 * Gets the Node/Element Data for this card
-	 * @returns {Node}
+	 * @returns {{card: Node, comment: Node}}
 	 */
 	nodeData() {
 		//
+		//Setup the Node List Object
+		const nodeList = new Object();
+
 		//Get the Template Card
 		const templateCard = document.body.querySelector(".template_card");
 
@@ -151,7 +179,37 @@ class Anime {
 		//Update the New Card's Image
 		newCard.querySelector(".card_img img").src = this.imageURL;
 
-		//Return the New Card
-		return newCard;
+		//Add the New Card to the Node List
+		nodeList.card = newCard;
+
+		//Get the Template Comment
+		const templateComment = document.body.querySelector(".template_comment");
+
+		//Setup the New Comment
+		const newComment = templateComment.content.children[0].cloneNode(true);
+
+		//Get the Comment's Anime Name
+		const commentAnimeName = newComment.querySelector(".anime_name");
+
+		//Get the Comment's Content
+		const commentContent = newComment.querySelector(".comment_content");
+
+		//Update the New Comment's Data
+		newComment.dataset.id = this.id;
+
+		//Update the Comment's Anime Name Element's Class to reflect the rating the user gave it
+		commentAnimeName.classList.toggle(this.rating, true);
+
+		//Update the Comment's Anime Name
+		commentAnimeName.innerText = this.name;
+
+		//Update the Comment's Content
+		commentContent.innerText = this.comment;
+
+		//Add the New Comment to the Node List
+		nodeList.comment = newComment;
+
+		//Return the Node List
+		return nodeList;
 	}
 }

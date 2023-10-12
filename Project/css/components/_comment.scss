@@ -1,0 +1,29 @@
+.comment {
+	width: 80vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: baseline;
+	margin-bottom: 20px;
+
+	.anime_name {
+		text-align: center;
+		font-size: 16px;
+	}
+
+	.anime_name.good {
+		color: #49ff62;
+	}
+
+	.anime_name.average {
+		color: #f3ff49;
+	}
+
+	.anime_name.bad {
+		color: #ff4949;
+	}
+
+	.comment_content {
+		text-align: center;
+		font-size: 14px;
+	}
+}

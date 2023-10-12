@@ -1,0 +1,15 @@
+.comment_list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: baseline;
+	align-items: center;
+
+	.comment_list_title {
+		width: 80%;
+		padding: 10px;
+		text-align: center;
+		font-size: 30px;
+		border-bottom: 1px dashed #49ff8f88;
+	}
+}

@@ -2,6 +2,7 @@
 
 //Get the Required Elements
 const cardListElement = document.querySelector(".card_list");
+const commentListElement = document.querySelector(".comment_list");
 const notifierElement = document.querySelector(".notifier");
 
 //Setup Event Listeners
@@ -47,7 +48,7 @@ function loadCardList() {
 	for (const card of cardList) {
 		//
 		//Add the Cards to the List
-		card.openCard(cardListElement);
+		card.openCard(cardListElement, commentListElement);
 	}
 }
 
@@ -194,10 +195,15 @@ async function handleAnimeNameChangeEvents(inputEvent) {
 	}
 
 	//Clear the Anime Search List
-	animeSearchListElement.innerHTML = null;
+	$(animeSearchListElement).empty();
+
+	//Show the Dropdown List
+	$(animeSearchListElement).css({
+		opacity: `100%`,
+	});
 
 	//Add the List of Show Elements to the Anime Search List Element
-	animeSearchListElement.append(...showListElements);
+	$(animeSearchListElement).append(...showListElements);
 }
 
 /**
@@ -283,7 +289,8 @@ function deleteCard(targetElement) {
 	cardList.splice(cardIndex, 1);
 
 	//Delete the Card Element
-	cardElement.remove();
+	//cardElement.remove();
+	card.deleteNodes(cardListElement, commentListElement);
 
 	//Save the Card List
 	saveCardList(cardList);
@@ -328,7 +335,7 @@ function addCard(newCardModal, clickEvent) {
 	);
 
 	//Load the New Card
-	newCard.openCard(cardListElement);
+	newCard.openCard(cardListElement, commentListElement);
 
 	//Delete the Modal
 	newCardModal.delete();
