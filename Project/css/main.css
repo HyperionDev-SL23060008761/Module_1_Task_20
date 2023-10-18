@@ -66,7 +66,6 @@
   left: 0px;
   z-index: 2;
   font-size: 14px;
-  pointer-events: none;
 }
 .card .watched_bar .watched_icon, .add_card .watched_bar .watched_icon {
   color: #28ff70;
@@ -76,6 +75,12 @@
 }
 .card .watched_icon_hidden, .add_card .watched_icon_hidden {
   display: none;
+}
+.card .watched_bar:hover .watched_icon, .add_card .watched_bar:hover .watched_icon {
+  color: #ff543d;
+}
+.card .watched_bar:hover .no_watched_icon, .add_card .watched_bar:hover .no_watched_icon {
+  color: #28ff70;
 }
 .card .card_overlay .card_img, .add_card .card_overlay .card_img {
   position: absolute;
@@ -520,6 +525,7 @@ form .form_input .form_radio_group input[value=bad]:checked {
   flex-direction: column;
   justify-content: baseline;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .comment .anime_name {
   text-align: center;
@@ -537,6 +543,10 @@ form .form_input .form_radio_group input[value=bad]:checked {
 .comment .comment_content {
   text-align: center;
   font-size: 14px;
+}
+
+.comment:hover {
+  border: 1px dashed rgba(73, 255, 97, 0.5607843137);
 }
 
 .notifier {
@@ -576,6 +586,36 @@ form .form_input .form_radio_group input[value=bad]:checked {
 .notifier.notifier_fail {
   color: #fd3e3e;
   border-color: rgba(253, 62, 62, 0.3019607843);
+}
+
+.home_page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home_page .main_welcomer {
+  font-size: 54px;
+}
+.home_page .main_welcomer .main_title {
+  color: #28ff70;
+  font-size: 72px;
+}
+.home_page .view_list_button {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 32px;
+  font-family: cursive;
+  font-weight: bold;
+  padding: 5px 15px;
+  border: 1px solid rgba(40, 255, 112, 0.5960784314);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.home_page .view_list_button:hover {
+  border: 1px dashed rgba(40, 255, 112, 0.8078431373);
 }
 
 body.about_page .about_section {

@@ -4,6 +4,7 @@
 	flex-direction: column;
 	justify-content: baseline;
 	margin-bottom: 20px;
+	cursor: pointer;
 
 	.anime_name {
 		text-align: center;
@@ -26,4 +27,8 @@
 		text-align: center;
 		font-size: 14px;
 	}
+}
+
+.comment:hover {
+	border: 1px dashed #49ff618f;
 }

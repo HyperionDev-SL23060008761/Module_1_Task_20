@@ -25,7 +25,6 @@
 		left: 0px;
 		z-index: 2;
 		font-size: 14px;
-		pointer-events: none;
 
 		.watched_icon {
 			color: #28ff70;
@@ -38,6 +37,16 @@
 
 	.watched_icon_hidden {
 		display: none;
+	}
+
+	.watched_bar:hover {
+		.watched_icon {
+			color: #ff543d;
+		}
+
+		.no_watched_icon {
+			color: #28ff70;
+		}
 	}
 
 	.card_overlay {

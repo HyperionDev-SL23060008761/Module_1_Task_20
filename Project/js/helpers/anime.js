@@ -136,6 +136,12 @@ class Anime {
 
 		//Add the Comment to the Comment's Parent Element
 		commentParentElement.append(nodeList.comment);
+
+		//Get the Comment's Content Element
+		const commentContentElement = nodeList.comment.querySelector(".comment_content");
+
+		//Hide the Comment's Content by Default
+		$(commentContentElement).hide();
 	}
 
 	/**
