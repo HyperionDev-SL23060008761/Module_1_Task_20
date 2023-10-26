@@ -31,7 +31,9 @@
 		<nav class="navbar">
 			<!--Setup the Navigation Logo-->
 			<div class="nav_logo">
-				<img src="/assets/Banner.png" alt="" />
+				<a href="../index.html">
+					<img src="../assets/Banner.png" alt="" />
+				</a>
 			</div>
 
 			<!--Setup the Navigation Links Area-->
@@ -69,14 +71,20 @@
 						<!--Setup a Radio Button Group-->
 						<div class="form_radio_group">
 							<!--Setup the Radio Buttons for the User to choose from-->
-							<label for="good" class="hidden">Not Urgent Priority</label>
-							<input type="radio" name="Priority" value="good" checked />
-
-							<label for="average" class="hidden">Urgent Priority</label>
-							<input type="radio" name="Priority" value="average" />
-
-							<label for="bad" class="hidden">Extremely Urgent Priority</label>
-							<input type="radio" name="Priority" value="bad" />
+							<input
+								type="radio"
+								name="Priority"
+								value="good"
+								aria-label="Not Urgent Priority"
+								checked
+							/>
+							<input type="radio" name="Priority" value="average" aria-label="Urgent Priority" />
+							<input
+								type="radio"
+								name="Priority"
+								value="bad"
+								aria-label="Extremely Urgent Priority"
+							/>
 						</div>
 					</div>
 
